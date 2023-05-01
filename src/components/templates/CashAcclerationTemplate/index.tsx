@@ -1,11 +1,51 @@
-import { Button, Grid, Stack } from "@mui/material";
+import {
+  Button,
+  Grid,
+  Paper,
+  Stack,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 import { Header } from "../../organisms/Header";
 import { NewCashKick } from "../../molecules/NewCashkick";
 import { TypographyCustom } from "../../atoms/Typography";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import { Picture } from "../../molecules/Picture";
 import { LogoImg } from "../../atoms/LogoImg";
 import SyncIcon from "@mui/icons-material/Sync";
+
+const sxPaper = {
+  maxHeight: "200px",
+  overflowY: "scroll",
+  backgroundColor: "groundcolor.light",
+  scrollbarWidth: "thin",
+  "&::-webkit-scrollbar": {
+    width: "0",
+    // backgroundColor: "#F5F5F5",
+  },
+  // "&::-webkit-scrollbar-thumb": {
+  //   borderRadius: "10px",
+  //   backgroundColor: "#AAA",
+  // },
+  "& .MuiTableCell-head": {
+    backgroundColor: "groundcolor.darker",
+    color: "fontcolor.light",
+    borderBottom: "none",
+    padding: 3,
+  },
+  "& .MuiTableCell-body": {
+    backgroundColor: "#28272B",
+    color: "fontcolor.main",
+    border: "none",
+    paddingTop: 2,
+    paddingBottom: 2,
+    paddingLeft: 3,
+    paddingRight: 3,
+  },
+};
+
 export const CashAcclerationTemplate = () => {
   return (
     <>
@@ -153,7 +193,6 @@ export const CashAcclerationTemplate = () => {
               </Grid>
             </Grid>
           </Grid>
-          {/* Table start here */}
           <Grid
             item
             lg={12}
@@ -229,68 +268,171 @@ export const CashAcclerationTemplate = () => {
                 </Button>
               </Stack>
               <Stack direction="column" gap={1}>
-                <Stack
-                  direction="row"
-                  justifyContent="space-around"
-                  bgcolor={"groundcolor.darker"}
-                  padding={1}
-                  color={"fontcolor.light"}
-                >
-                  <TypographyCustom variantType="body1" typotext="Name" />
-                  <TypographyCustom variantType="body1" typotext="status" />
-                  <TypographyCustom variantType="body1" typotext="Type" />
-                  <TypographyCustom
-                    variantType="body1"
-                    typotext="Per Payment"
-                  />
-                  <TypographyCustom
-                    variantType="body1"
-                    typotext="Total financed"
-                  />
-                  <TypographyCustom
-                    variantType="body1"
-                    typotext="Total available"
-                  />
-                </Stack>
-                <Stack
-                  direction="column"
-                  sx={{
-                    height: "180px",
-                    overflowY: "scroll",
-                    scrollbarWidth: "thin",
-                    "&::-webkit-scrollbar": {
-                      width: "2px",
-                      backgroundColor: "#F5F5F5",
-                    },
-                    "&::-webkit-scrollbar-thumb": {
-                      borderRadius: "10px",
-                      backgroundColor: "#AAA",
-                    },
-                  }}
-                >
-                  <Stack
-                    direction="row"
-                    justifyContent="space-around"
-                    padding={1}
-                  >
-                    <TypographyCustom variantType="body1" typotext="Name" />
-                    <TypographyCustom variantType="body1" typotext="status" />
-                    <TypographyCustom variantType="body1" typotext="Type" />
-                    <TypographyCustom
-                      variantType="body1"
-                      typotext="Per Payment"
-                    />
-                    <TypographyCustom variantType="body1" typotext="-" />
-                    <TypographyCustom
-                      variantType="body1"
-                      typotext="Total available"
-                    />
-                  </Stack>{" "}
-                  {/* <Picture
-                    piclink="../../Assets/HomeIcons/cheque.svg"
-                    picname="asset"
-                  /> */}
-                </Stack>
+                <Paper sx={sxPaper}>
+                  <Table>
+                    <TableHead
+                      sx={{
+                        position: "sticky",
+                        top: 0,
+                      }}
+                    >
+                      <TableRow>
+                        <TableCell sx={{ width: "16.6%" }}>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext="Name"
+                          />
+                        </TableCell>
+                        <TableCell sx={{ width: "16.6%" }}>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext="Status"
+                          />
+                        </TableCell>
+                        <TableCell sx={{ width: "16.6%" }}>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext="Type"
+                          />
+                        </TableCell>
+                        <TableCell sx={{ width: "16.6%" }}>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext="Per payment"
+                          />
+                        </TableCell>
+                        <TableCell sx={{ width: "16.6%" }}>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext="Total financed"
+                          />
+                        </TableCell>
+                        <TableCell sx={{ width: "16.6%" }}>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext="Total available"
+                          />
+                        </TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext="Contract1"
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext="Available"
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext="Monthly"
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext={`$${12000.25}`}
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext={"-"}
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext={`$${126722.64}`}
+                          />
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext="Contract1"
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext="Available"
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext="Monthly"
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext={`$${12000.25}`}
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext={"-"}
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext={`$${126722.64}`}
+                          />
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext="Contract1"
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext="Available"
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext="Monthly"
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext={`$${12000.25}`}
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext={"-"}
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <TypographyCustom
+                            variantType="body2"
+                            typotext={`$${126722.64}`}
+                          />
+                        </TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </Paper>
               </Stack>
             </Stack>
           </Grid>

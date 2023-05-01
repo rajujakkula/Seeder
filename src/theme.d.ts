@@ -1,6 +1,12 @@
-import { PalatteColor, PalatteColorOptions } from "@mui/material/styles";
+import {
+  PalatteColor,
+  PalatteColorOptions,
+  // Theme as MuiTheme,
+} from "@mui/material/styles";
 
 declare module "@mui/material/styles" {
+  // interface Theme extends MuiTheme {}
+
   interface Palette {
     fontcolor: {
       main: PalatteColor;

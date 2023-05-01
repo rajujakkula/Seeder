@@ -19,7 +19,7 @@ export const SideNavbar = () => {
           direction="column"
           alignItems="flex-start"
           justifyContent="flex-start"
-          height={"80%"}
+          height="90%"
           marginY="10px"
           gap={1}
         >

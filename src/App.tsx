@@ -21,8 +21,8 @@ function App() {
           direction="row"
         >
           <SideNavbar />
-          {/* <HomePage /> */}
-          <CashAcclerationPage />
+          <HomePage />
+          {/* <CashAcclerationPage /> */}
         </Grid>
       </ThemeProvider>
     </div>

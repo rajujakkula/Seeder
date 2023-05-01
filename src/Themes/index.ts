@@ -8,8 +8,8 @@ const basetheme = createTheme({
     primary: {
       main: "#6C5DD3",
       light: "#B4A9FF",
-      // dark: '',
     },
+
     fontcolor: {
       main: "#E8E7F0",
       light: "#A5A5A6",
@@ -24,6 +24,7 @@ const basetheme = createTheme({
       darker: "#262529",
     },
   },
+
   components: {
     MuiTextField: {
       styleOverrides: {
@@ -39,6 +40,15 @@ const basetheme = createTheme({
         },
       },
     },
+    // MuiPaper: {
+    //   styleOverrides: {
+    //     root: {
+    //       "&": {
+    //         color: "#E8E7F0",
+    //       },
+    //     },
+    //   },
+    // },
   },
 });
 
