@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import "./App.css";
+import { LoginPage } from "./pages/LoginPage";
+import { ThemeProvider } from "@emotion/react";
+import theme from "../src/Themes/index";
+import SignUpPage from "./pages/SignupPage";
+import { HomePage } from "./pages/HomePage";
+import { Grid } from "@mui/material";
+import { SideNavbar } from "./components/organisms/SideNavbar";
+import { CashAcclerationPage } from "./pages/CashAccleration";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <ThemeProvider theme={theme}>
+        {/* <LoginPage /> */}
+        {/* <SignUpPage /> */}
+        <Grid
+          container
+          bgcolor={theme.palette.groundcolor.dark}
+          flexWrap="wrap"
+          direction="row"
         >
-          Learn React
-        </a>
-      </header>
+          <SideNavbar />
+          {/* <HomePage /> */}
+          <CashAcclerationPage />
+        </Grid>
+      </ThemeProvider>
     </div>
   );
 }
