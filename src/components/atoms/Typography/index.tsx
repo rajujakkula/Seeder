@@ -15,16 +15,18 @@ export interface TypographyProps {
   typotext?: React.ReactNode;
   color?: React.CSSProperties["color"];
   sx?: SxProps;
+  children?: React.ReactNode;
 }
 export const TypographyCustom = ({
   variantType,
   typotext,
   color,
   sx,
+  children,
 }: TypographyProps) => {
   return (
     <Typography variant={variantType} color={color} sx={sx}>
-      {typotext}
+      {typotext || children}
     </Typography>
   );
 };

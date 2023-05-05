@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { TypographyCustom } from "../../atoms/Typography";
 import { MuiButton } from "../../atoms/Button";
 
-export const NewCashKick = () => {
+export const LaunchCashKick = () => {
   return (
     <Box
       display="flex"

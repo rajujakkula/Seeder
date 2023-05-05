@@ -12,6 +12,7 @@ export interface CustomIconLabelButton {
   direction?: "row" | "column";
   size?: "medium" | "large";
   sx?: SxProps;
+  sxImg?: SxProps;
 }
 
 // export const IconLabelButtons = (props: CustomIconLabelButton) => {
@@ -27,6 +28,7 @@ export const IconLabelButtons = (
     altnameIconButton,
     size,
     sx,
+    sxImg,
   } = props;
   return (
     <MuiButton
@@ -36,7 +38,7 @@ export const IconLabelButtons = (
       sx={sx}
     >
       <Stack direction={direction} spacing={2} alignItems="center">
-        <ImageListItem>
+        <ImageListItem sx={sxImg}>
           <img
             src={socialIcon}
             alt={altnameIconButton}

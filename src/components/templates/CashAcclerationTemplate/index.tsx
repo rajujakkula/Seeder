@@ -10,7 +10,7 @@ import {
   TableRow,
 } from "@mui/material";
 import { Header } from "../../organisms/Header";
-import { NewCashKick } from "../../molecules/NewCashkick";
+import { LaunchCashKick } from "../../molecules/LaunchCashKick";
 import { TypographyCustom } from "../../atoms/Typography";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { LogoImg } from "../../atoms/LogoImg";
@@ -189,7 +189,7 @@ export const CashAcclerationTemplate = () => {
                 </Stack>
               </Grid>
               <Grid item md={4} xs={12} sm={6}>
-                <NewCashKick />
+                <LaunchCashKick />
               </Grid>
             </Grid>
           </Grid>

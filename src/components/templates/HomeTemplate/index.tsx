@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { Header } from "../../organisms/Header";
 import { CustomCard } from "../../molecules/Card";
-import { NewCashKick } from "../../molecules/NewCashkick";
+import { LaunchCashKick } from "../../molecules/LaunchCashKick";
 import { TypographyCustom } from "../../atoms/Typography";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { Picture } from "../../molecules/Picture";
@@ -77,7 +77,7 @@ export const HomeTemplate = () => {
                 <CustomCard />
               </Grid>
               <Grid item md={4} xs={12} sm={6}>
-                <NewCashKick />
+                <LaunchCashKick />
               </Grid>
             </Grid>
           </Grid>

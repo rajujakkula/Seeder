@@ -1,5 +1,4 @@
 import { createTheme, responsiveFontSizes } from "@mui/material";
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const defaultTheme = createTheme({});
 
@@ -40,18 +39,10 @@ const basetheme = createTheme({
         },
       },
     },
-    // MuiPaper: {
-    //   styleOverrides: {
-    //     root: {
-    //       "&": {
-    //         color: "#E8E7F0",
-    //       },
-    //     },
-    //   },
-    // },
   },
 });
 
 // export default responsiveFontSizes(theme);
 const theme = responsiveFontSizes(basetheme);
+
 export default theme;

@@ -8,6 +8,7 @@ import { HomePage } from "./pages/HomePage";
 import { Grid } from "@mui/material";
 import { SideNavbar } from "./components/organisms/SideNavbar";
 import { CashAcclerationPage } from "./pages/CashAccleration";
+import { NewCashKickPage } from "./pages/NewCashKickPage";
 function App() {
   return (
     <div className="App">
@@ -23,6 +24,7 @@ function App() {
           <SideNavbar />
           <HomePage />
           {/* <CashAcclerationPage /> */}
+          {/* <NewCashKickPage /> */}
         </Grid>
       </ThemeProvider>
     </div>

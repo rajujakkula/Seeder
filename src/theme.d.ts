@@ -39,4 +39,6 @@ declare module "@mui/material/styles" {
       contrastText?: PalatteColorOptions;
     };
   }
+
+  //Components
 }
