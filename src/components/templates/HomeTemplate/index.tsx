@@ -14,6 +14,9 @@ import { LaunchCashKick } from "../../molecules/LaunchCashKick";
 import { TypographyCustom } from "../../atoms/Typography";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { Picture } from "../../molecules/Picture";
+import { useNavigate } from "react-router-dom";
+import theme from "../../../Themes";
+import { SideNavbar } from "../../organisms/SideNavbar";
 
 const sxPaper = {
   maxHeight: "200px",
@@ -44,8 +47,16 @@ const sxPaper = {
 };
 
 export const HomeTemplate = () => {
+  const navigate = useNavigate();
   return (
     <>
+      {/* <Grid
+        container
+        bgcolor={theme.palette.groundcolor.dark}
+        flexWrap="wrap"
+        direction="row"
+      >
+        <SideNavbar /> */}
       <Grid item md={9} color="white" padding={4}>
         <Grid container direction="column" gap={1.5}>
           <Grid item lg={12}>
@@ -77,7 +88,9 @@ export const HomeTemplate = () => {
                 <CustomCard />
               </Grid>
               <Grid item md={4} xs={12} sm={6}>
-                <LaunchCashKick />
+                <LaunchCashKick
+                  handleNavigateNewCashKik={() => navigate("newcashkick")}
+                />
               </Grid>
             </Grid>
           </Grid>
@@ -320,6 +333,7 @@ export const HomeTemplate = () => {
           </Grid>
         </Grid>
       </Grid>
+      {/* </Grid> */}
     </>
   );
 };

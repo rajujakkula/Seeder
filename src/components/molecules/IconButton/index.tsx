@@ -13,6 +13,7 @@ export interface CustomIconLabelButton {
   size?: "medium" | "large";
   sx?: SxProps;
   sxImg?: SxProps;
+  handleNavigation?: () => void;
 }
 
 // export const IconLabelButtons = (props: CustomIconLabelButton) => {
@@ -21,7 +22,6 @@ export const IconLabelButtons = (
 ) => {
   const {
     variant,
-    socialMediaClick,
     children,
     socialIcon,
     direction,
@@ -29,11 +29,12 @@ export const IconLabelButtons = (
     size,
     sx,
     sxImg,
+    handleNavigation,
   } = props;
   return (
     <MuiButton
       variant={variant}
-      handleClick={socialMediaClick}
+      handleClick={handleNavigation}
       size={size}
       sx={sx}
     >

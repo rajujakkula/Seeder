@@ -10,7 +10,12 @@ export const Header = ({ headerline, subline }: HeaderProps) => {
   return (
     <>
       <Grid item>
-        <TwoTypography headertitle={headerline} subcontent={subline} />
+        <TwoTypography
+          headerVariant="h5"
+          subVariant="body2"
+          headertitle={headerline}
+          subcontent={subline}
+        />
       </Grid>
       <Grid>
         <ProfileIcon direction="row" />

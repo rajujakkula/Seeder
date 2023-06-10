@@ -15,6 +15,7 @@ export interface TextFieldProps {
   endIcon?: string;
   value?: string;
   sx?: SxProps;
+  size?: "small" | "medium";
 }
 export const MuiTextField = (props: TextFieldProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -27,7 +28,8 @@ export const MuiTextField = (props: TextFieldProps) => {
     startIcon,
     endIcon,
     value,
-    ...rest
+    size,
+    sx,
   } = props;
   return (
     <>
@@ -36,6 +38,8 @@ export const MuiTextField = (props: TextFieldProps) => {
         placeholder={placeholder}
         type={showPass ? "text" : "password"}
         value={value}
+        size={size}
+        sx={sx}
         onChange={handleChange}
         InputProps={{
           startAdornment: startIcon && (
@@ -53,7 +57,6 @@ export const MuiTextField = (props: TextFieldProps) => {
             </InputAdornment>
           ),
         }}
-        {...rest}
       />
     </>
   );

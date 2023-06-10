@@ -1,12 +1,14 @@
 import { Grid } from "@mui/material";
 import { LoginTopTitle } from "../../molecules/LoginTopTitle";
 import { IconLabelButtons } from "../../molecules/IconButton";
-// import theme from "../../../Themes";
+import { useNavigate } from "react-router-dom";
 
 export const SideNavbar = () => {
+  const navigate = useNavigate();
+
   return (
     <>
-      <Grid item md={3} bgcolor="#222124" p={4}>
+      <Grid item xs={12} md={3} bgcolor="#222124" p={4}>
         <LoginTopTitle
           color="#E8E7F0"
           variantType="h4"
@@ -36,6 +38,7 @@ export const SideNavbar = () => {
                 justifyContent: "flex-start",
                 color: "fontcolor.light",
               }}
+              handleNavigation={() => navigate("/dashboard")}
             />
           </Grid>
           <Grid item width={"100%"}>
@@ -51,6 +54,7 @@ export const SideNavbar = () => {
                 justifyContent: "flex-start",
                 color: "fontcolor.light",
               }}
+              handleNavigation={() => navigate("cash_acceleration")}
             />
           </Grid>
           <Grid item width={"100%"} marginTop={"auto"}>

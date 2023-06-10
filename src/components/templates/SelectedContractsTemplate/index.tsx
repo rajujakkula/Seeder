@@ -6,9 +6,9 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Box from "@mui/material/Box";
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import { MuiButton } from "../../atoms/Button";
-import { MuiSlider } from "../../atoms/Slider";
+import { ReviewCreditModal } from "../../organisms/PopupReviewCrediCash/index";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 // import theme from "../../../Themes";
 // import { SideNavbar } from "../../organisms/SideNavbar";
 
@@ -109,8 +109,16 @@ const sxDataGrid = {
   },
 };
 
-export const NewCashKickTemplate = () => {
+export const SelectedContractsTemplate = () => {
+  // const [reviewCredits, setReviewCredits] = useState<boolean>(false);
   const navigate = useNavigate();
+  const [open, setOpen] = useState<boolean>(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  // const reviewCreditshHandle = () => {
+  //   setReviewCredits((prev) => !prev);
+  // };
 
   return (
     <>
@@ -181,17 +189,6 @@ export const NewCashKickTemplate = () => {
                         rows={rows}
                         columns={columns}
                         sx={sxDataGrid}
-                        // initialState={{
-                        //   pagination: {
-                        //     paginationModel: {
-                        //       pageSize: 5,
-                        //     },
-                        //   },
-                        // }}
-                        // pageSizeOptions={[5]}
-                        // disableRowSelectionOnClick
-
-                        checkboxSelection
                         hideFooter={true}
                         disableColumnMenu
                         disableColumnFilter
@@ -265,38 +262,40 @@ export const NewCashKickTemplate = () => {
                       }}
                     />
                   </Stack>
-                  <div>
-                    <Stack>
-                      <MuiSlider
-                        min={0}
-                        max={880_000}
-                        sx={{
-                          "& .MuiSlider-thumb": {
-                            borderRadius: 1,
-                            color: "#6C5DD3",
-                          },
-                        }}
-                        valueLabelDisplay="auto"
-                      />
-                    </Stack>
-                    <Stack direction="row" alignItems="center" spacing={1}>
-                      <TypographyCustom
-                        variantType="body1"
-                        color="primary.main"
-                        typotext={`$${(0).toFixed(2)}`}
-                      />
-                      <TypographyCustom
-                        variantType="body2"
-                        color="fontcolor.light"
-                        typotext="reviewCridts of"
-                      />
-                      <TypographyCustom
-                        variantType="body1"
-                        color="#fff"
-                        typotext={"$880,000.00"}
-                      />
-                    </Stack>
-                  </div>
+
+                  {/* <div>
+                      <Stack>
+                        <MuiSlider
+                          min={0}
+                          max={880_000}
+                          sx={{
+                            "& .MuiSlider-thumb": {
+                              borderRadius: 1,
+                              color: "#6C5DD3",
+                            },
+                          }}
+                          valueLabelDisplay="auto"
+                        />
+                      </Stack>
+                      <Stack direction="row" alignItems="center" spacing={1}>
+                        <TypographyCustom
+                          variantType="body1"
+                          color="primary.main"
+                          typotext={`$${(0).toFixed(2)}`}
+                        />
+                        <TypographyCustom
+                          variantType="body2"
+                          color="fontcolor.light"
+                          typotext="reviewCridts of"
+                        />
+                        <TypographyCustom
+                          variantType="body1"
+                          color="#fff"
+                          typotext={"$880,000.00"}
+                        />
+                      </Stack>
+                    </div> */}
+
                   <Stack
                     direction="row"
                     alignItems={"center"}
@@ -363,18 +362,16 @@ export const NewCashKickTemplate = () => {
                   <Stack marginTop={2}>
                     <MuiButton
                       variant={"contained"}
-                      children="Review your credit"
+                      children={"Submit your credit"}
                       sx={{
                         height: "2.7rem",
-                        bgcolor: "primary.main",
-                        color: "fontcolor.main",
+                        bgcolor: ` ${"primary.dark"}`,
+                        color: `${"fontcolor.main"}`,
                         textTransform: "capitalize",
                         fontWeight: 600,
                         marginY: "5px",
                       }}
-                      handleClick={() =>
-                        navigate("/dashboard/selectedcontracts")
-                      }
+                      handleClick={handleOpen}
                     />
                   </Stack>
                 </Stack>
@@ -383,6 +380,7 @@ export const NewCashKickTemplate = () => {
           </Grid>
         </Grid>
       </Grid>
+      <ReviewCreditModal open={open} handleClose={handleClose} />
     </>
   );
 };

@@ -9,6 +9,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* @media screen and (max-width:1023px) {
+  #root{
+
+    display: none;
+  }
+} */
 @media only screen and (max-width:1199px) {
   #root{
     display: none;

@@ -15,6 +15,9 @@ import { TypographyCustom } from "../../atoms/Typography";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { LogoImg } from "../../atoms/LogoImg";
 import SyncIcon from "@mui/icons-material/Sync";
+import { useNavigate } from "react-router-dom";
+import theme from "../../../Themes";
+import { SideNavbar } from "../../organisms/SideNavbar";
 
 const sxPaper = {
   maxHeight: "200px",
@@ -47,8 +50,16 @@ const sxPaper = {
 };
 
 export const CashAcclerationTemplate = () => {
+  const navigate = useNavigate();
   return (
     <>
+      {/* <Grid
+        container
+        bgcolor={theme.palette.groundcolor.dark}
+        flexWrap="wrap"
+        direction="row"
+      >
+        <SideNavbar /> */}
       <Grid item md={9} color="white" padding={4}>
         <Grid container direction="column" gap={2}>
           <Grid item lg={12}>
@@ -189,7 +200,11 @@ export const CashAcclerationTemplate = () => {
                 </Stack>
               </Grid>
               <Grid item md={4} xs={12} sm={6}>
-                <LaunchCashKick />
+                <LaunchCashKick
+                  handleNavigateNewCashKik={() =>
+                    navigate("/dashboard/newcashkick")
+                  }
+                />
               </Grid>
             </Grid>
           </Grid>
@@ -438,6 +453,7 @@ export const CashAcclerationTemplate = () => {
           </Grid>
         </Grid>
       </Grid>
+      {/* </Grid> */}
     </>
   );
 };

@@ -2,7 +2,13 @@ import { Box } from "@mui/material";
 import { TypographyCustom } from "../../atoms/Typography";
 import { MuiButton } from "../../atoms/Button";
 
-export const LaunchCashKick = () => {
+interface LaunchCashKickProps {
+  handleNavigateNewCashKik: () => void;
+}
+
+export const LaunchCashKick = ({
+  handleNavigateNewCashKik,
+}: LaunchCashKickProps) => {
   return (
     <Box
       display="flex"
@@ -50,6 +56,7 @@ export const LaunchCashKick = () => {
           fontWeight: "500",
           fontSize: "1.125rem",
         }}
+        handleClick={handleNavigateNewCashKik}
       />
     </Box>
   );
